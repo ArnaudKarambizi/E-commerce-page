@@ -1,20 +1,135 @@
 <!doctype html>
 <html lang="en">
-  <head>
+
+<head>
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
     <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="./assets/css/normalize.css" />
+    <link rel="stylesheet" href="lib/css/styles.css">
+    <title>Home</title>
+</head>
 
-    <title>Hello, world!</title>
-  </head>
-  <body>
-    <h1>Hello, world!</h1>
+<body>
+
+    <header class="header">
+        <nav class="header-nav nav-container">
+            <ul class="header-nav-list">
+                <li><a href="index.html" class="selected"> Home</a></li>
+                <Li><a href="product.html"> Products</a></Li>
+                <Li><a href="contact.html"> Contact Us</a></Li>
+            </ul>
+            <form class="header-search">
+                <input type="search" placeholder="Search..." name="search" class="header-search-bar" />
+                <input type="submit" value="search" class="header-button" />
+            </form>
+        </nav>
+    </header>
+
+    <div class="slider-outer">
+        <button class="prev">prev</button>
+        <button class="next">next</button>
+        <div class="slider-inner">
+            <img src="https://images.unsplash.com/photo-1562184552-997c461abbe6?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2850&q=80"
+                class="active">
+            <img
+                src="https://images.unsplash.com/photo-1524758631624-e2822e304c36?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1950&q=80">
+            <img
+                src="https://images.unsplash.com/photo-1513694203232-719a280e022f?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1949&q=80">
+            <img
+                src="https://images.unsplash.com/photo-1493663284031-b7e3aefcae8e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1950&q=80">
+        </div>
+    </div>
+    </div>
+
+           <main class="home"> 
+               
+            <h1>RIVIERA</h1> 
+
+                  <h2> Just for you</h2>
+
+        <P> natural textures, neutral tones, and nature inspired.
+            here comes the sunshine, explore new styles  shops for the season.
+            from exposed wood and weathered  metal to wicker and rattan.
+            your summer staycation starts here.  </P>
+        
+        </main>
+
+    <footer class="footer">
+        <div class="footer-links ">
+            <ul class="footer-list">
+                <h3>Links:</h3>
+                <li><a href="index.html"> Home</a></li>
+                <li><a href="product.html"> Products</a></li>
+                <Li><a href="contact.html"> Contact Us</a></Li>
+            </ul>
+        
+
+<!--LINKS TO SOCIAL MEDIA-->
+<ul class="footer-icons">
+        <h3>Follow Us:</h3>
+        <li>
+            <a href="https://www.instagram.com/?hl=en">
+                <img src="https://c866088.ssl.cf3.rackcdn.com/assets/instagram40x40.png" alt="Instagram Icon" />
+            </a>
+        </li>
+        <li>
+            <a href="https://www.facebook.com/">
+                <img src="https://c866088.ssl.cf3.rackcdn.com/assets/facebook40x40.png" alt="Facebok Icon" />
+            </a>
+        </li>
+        <li>
+            <a href="https://twitter.com/?lang=en">
+                <img src="https://c866088.ssl.cf3.rackcdn.com/assets/twitter40x40.png" alt="Twitter Icon" />
+            </a>
+        </li>
+        <li>
+            <a href="https://www.youtube.com/channel/UCYfdidRxbB8Qhf0Nx7ioOYw">
+                <img src="https://c866088.ssl.cf3.rackcdn.com/assets/youtube40x40.png" alt="Youtube Icon" />
+            </a>
+        </li>
+    </ul>
+        </div>
+
+        <div class="footer-copyright">
+            <p>&copy; 2019 Arnaud Karambizi</p>
+        </div>
+    </footer>
 
     <!-- Optional JavaScript -->
     <!-- jQuery -->
-    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-  </body>
+
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous">
+    </script>
+
+    <script>
+        $(document).ready(function () {
+            $('.next').on('click', function () {
+                var currentImg = $('.active');
+                var nextImg = currentImg.next();
+
+                if (nextImg.length) {
+                    currentImg.removeClass('active').css('z-index', -10);
+                    nextImg.addClass('active').css('z-index', 10);
+                }
+            });
+
+            $('.prev').on('click', function () {
+                var currentImg = $('.active');
+                var prevImg = currentImg.prev();
+
+                if (prevImg.length) {
+                    currentImg.removeClass('active').css('z-index', -10);
+                    prevImg.addClass('active').css('z-index', 10);
+                }
+            });
+        });
+    </script>
+</body>
+
 </html>
